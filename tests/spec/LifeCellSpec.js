@@ -4,9 +4,9 @@ describe('LifeCell', function() {
 	//reset config in test so that we can correctly test the algorithms with expected config values
 	//no matter if the configs are changed on the object
 	LifeCell.prototype.config = {
-		sustain: [2, 3],
-		procreate: [3, 3],
-		overcrowd: [4]
+		minimumToSustain: 2,
+		procreateRange: [3, 3],
+		minimumToOvercrowd: 4
 	};
 
 	beforeEach(function() {
