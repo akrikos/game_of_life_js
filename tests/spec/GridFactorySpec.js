@@ -23,10 +23,10 @@ describe('GridFactory', function() {
 					input2 = defaultInput.slice(1, defaultInput.length);
 				expect(function() {
 					GridFactory._buildArrayGrid(input1);
-				}).toThrow('Invalid input. Input grid must be rectangular. Row 3 was a different length from the previous rows');
+				}).toThrow('Input grid must be rectangular. Row 3 was a different length from the previous rows');
 				expect(function() {
 					GridFactory._buildArrayGrid(input2);
-				}).toThrow('Invalid input. Input grid must be rectangular. Row 2 was a different length from the previous rows');
+				}).toThrow('Input grid must be rectangular. Row 2 was a different length from the previous rows');
 			}
 		);
 	});

@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>The Game of Life - Javascript</title>
 		<script type="text/javascript" src="lib/js/external/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript" src="lib/js/Exception.js"></script>
 		<script type="text/javascript" src="lib/js/GridFactory.js"></script>
-		<link rel="stylesheet" type="text/css" href="lib/css/life.css">
+		<script type="text/javascript" src="lib/js/LifeGrid.js"></script>
+		<script type="text/javascript" src="lib/js/LifeCell.js"></script>
+		<script type="text/javascript" src="lib/js/page.js"></script>
+		<link rel="stylesheet" type="text/css" href="lib/life.css">
 	</head>
 	<body>
-
+		<label for="wrap_config">Life World wraps at the edges of the grid:</label>
+		<select id="wrap_config">
+			<option value="false">false</option>
+			<option value="true">true</option>
+		</select>
+		<label for="life_input">Starting Grid:</label>
+		<textarea id="life_input">
+01000
+10011
+11001
+01000
+10001</textarea>
+		<button id="calculate">Calculate Next Cycle</button>
+		<br>
+		<label for="life_output">Output:</label>
+		<textarea id="life_output"></textarea>
 	</body>
 </html>

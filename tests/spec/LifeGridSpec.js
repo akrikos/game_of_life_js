@@ -1,5 +1,6 @@
 describe('LifeGrid', function() {
 	beforeEach(function() {
+		LifeGrid.prototype.config.wrapping = true; //reset to default before every run
 	});
 
 	describe('construct', function() {
@@ -35,7 +36,8 @@ describe('LifeGrid', function() {
 			expect(liveCount).toEqual(8);
 		});
 
-		it('should set up wrapping neighbor relationships correctly', function() {
+		it('should set up wrapping neighbor relationships correctly with wrapping turned on', function() {
+			LifeGrid.prototype.config.wrapping = true;
 			var input = [
 				['1', '1', '0', '1'],
 				['1', '1', '0', '1'],
@@ -50,6 +52,23 @@ describe('LifeGrid', function() {
 				}
 			});
 			expect(liveCount).toEqual(8);
+		});
+		it('should set up wrapping neighbor relationships correctly with wrapping turned off', function() {
+			LifeGrid.prototype.config.wrapping = false;
+			var input = [
+				['1', '1', '0', '1'],
+				['1', '1', '0', '1'],
+				['0', '1', '0', '1']
+			];
+			var grid = new LifeGrid(input).init(),
+				internalCell = grid._cellGrid[2][0],
+				liveCount = 0;
+			$.each(internalCell._neighbors, function() {
+				if (this.isAlive()) {
+					liveCount++;
+				}
+			});
+			expect(liveCount).toEqual(3);
 		});
 	});
 

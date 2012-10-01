@@ -1,1 +1,19 @@
 /* If more than one stylesheet is needed, please create a lib/css directory and put all css files into it */
+body {
+	font-family: arial;
+	}
+
+textarea {
+	font-family: monospace;
+	width: 200px;
+	height: 200px;
+	}
+
+label {
+	display: block;
+	margin-top: 10px;
+	}
+
+button {
+	display: block;
+	}
