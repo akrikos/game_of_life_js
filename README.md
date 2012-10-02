@@ -3,6 +3,7 @@ The Game of Life
 This repo currently contains 2 different implementations of capable of calculating a cycle in the game of life:
 * One that is more appropriate as the core of the system that runs the game
 * One that is more appropriate as a component in a larger system (it does the calculation and gets out)
+
 I will be updating the core implementation to actually run the game as I have time.
 
 Core Implementation
